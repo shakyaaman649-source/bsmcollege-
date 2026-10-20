@@ -10,12 +10,76 @@
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial, sans-serif;
-}
-
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSM College | Official Website</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+body{background:#f4f7fb;color:#222;}
+header{background:#073b7a;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo{font-size:25px;font-weight:bold;}
+nav{display:flex;gap:8px;flex-wrap:wrap;}
+nav button,.btn{border:0;padding:10px 15px;border-radius:6px;cursor:pointer;background:white;color:#073b7a;font-weight:bold;}
+.hero{background:linear-gradient(135deg,#073b7a,#0d73c7);color:white;text-align:center;padding:80px 20px;}
+.hero h1{font-size:42px;margin-bottom:15px;}
+section{padding:45px 6%;}
+section h2{text-align:center;color:#073b7a;margin-bottom:25px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 3px 12px #0001;}
+#adminPanel{display:none;padding:30px 5%;}
+.login-box{max-width:420px;margin:40px auto;background:white;padding:30px;border-radius:12px;box-shadow:0 5px 20px #0002;}
+input,select{width:100%;padding:11px;margin:7px 0 12px;border:1px solid #ccc;border-radius:6px;}
+.primary{background:#073b7a;color:white;}
+.danger{background:#c62828;color:white;}
+.success{background:#16803c;color:white;}
+.admin-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px;}
+.admin-nav button{padding:10px 14px;border:0;border-radius:6px;cursor:pointer;background:#073b7a;color:white;}
+.panel{background:white;padding:25px;border-radius:12px;margin-bottom:25px;box-shadow:0 3px 12px #0001;}
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;margin-top:15px;}
+th,td{border:1px solid #ddd;padding:9px;text-align:left;}
+th{background:#073b7a;color:white;}
+.hidden{display:none !important;}
+footer{background:#073b7a;color:white;text-align:center;padding:25px;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">🏫 BSM College</div>
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('about')">About</button>
+<button onclick="showSection('courses')">Courses</button>
+<button onclick="showSection('admission')">Admission</button>
+<button onclick="showSection('contact')">Contact</button>
+<button onclick="openLogin()">🔐 Admin Login</button>
+</nav>
+</header>
+<main id="publicSite">
+<section id="home" class="hero"><h1>Welcome to BSM College</h1><p>Education • Discipline • Knowledge • Success</p></section>
+<section id="about"><h2>About BSM College</h2><div class="cards"><div class="card"><h3>Our College</h3><p>BSM College विद्यार्थियों को गुणवत्तापूर्ण शिक्षा प्रदान करता है।</p></div></div></section>
+<section><h2>🔎 Student Result Search</h2><div class="card" style="max-width:600px;margin:auto;"><input id="publicRoll" placeholder="Enter Roll Number"><button class="btn primary" onclick="publicResult()">Search Result</button><div id="publicResultBox"></div></div></section>
+</main>
+<div id="loginPage" class="hidden"><div class="login-box"><h2>🔐 Admin Login</h2><br><input id="loginEmail" type="email" placeholder="Admin Email"><input id="loginPassword" type="password" placeholder="Password"><button class="btn primary" onclick="loginAdmin()">Login</button><button class="btn" onclick="closeLogin()">Back to Website</button><p id="loginMessage"></p></div></div>
+<div id="adminPanel"><h1>🏫 BSM College Admin Dashboard</h1><br><button class="btn danger" onclick="logoutAdmin()">Logout</button><br><br><div class="admin-nav"><button onclick="adminPage('students')">👨‍🎓 Students</button><button onclick="adminPage('fees')">💰 Fees</button><button onclick="adminPage('results')">📊 Results</button><button onclick="adminPage('marksheet')">🧾 Marksheet</button></div>
+<div id="studentsPage" class="panel"><h2>👨‍🎓 Student Admission</h2><input id="studentName" placeholder="Student Name"><input id="fatherName" placeholder="Father Name"><input id="studentDOB" type="date"><input id="studentRoll" placeholder="Roll Number"><select id="studentClass"><option value="">Select Class</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select><button class="btn success" onclick="addStudent()">Save Student</button><div id="studentList"></div></div>
+<div id="feesPage" class="panel hidden"><h2>💰 Fees Management</h2><input id="feeRoll" placeholder="Roll Number"><input id="feeAmount" type="number" placeholder="Fee Amount"><input id="feeDate" type="date"><button class="btn success" onclick="addFee()">Save Fee</button><div id="feeList"></div></div>
+<div id="resultsPage" class="panel hidden"><h2>📊 Result Entry</h2><input id="resultRoll" placeholder="Roll Number"><select id="resultClass"><option value="">Select Class</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select><div id="subjectInputs"></div><button class="btn primary" onclick="calculateAndSaveResult()">Save Result</button><div id="resultList"></div></div>
+<div id="marksheetPage" class="panel hidden"><h2>🧾 Professional Marksheet</h2><input id="marksheetRoll" placeholder="Enter Roll Number"><button class="btn primary" onclick="generateMarksheet()">Generate Marksheet</button><div id="marksheetArea"></div><br><button class="btn success" onclick="printMarksheet()">🖨️ Print A4 Marksheet</button></div>
+</div>
+<footer><p>© 2026 BSM College</p></footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig = { apiKey: "AIzaSyD_92y08ytyuCjC2h0aBUgR6Z3qDQVrBaA", authDomain: "bsm-college.firebaseapp.com", projectId: "bsm-college", storageBucket: "bsm-college.firebasestorage.app", messagingSenderId: "851384629756", appId: "1:851384629756:web:8faeb808c30d88b9b19a79" };
+const app = initializeApp(firebaseConfig); const auth = getAuth(app); const db = getFirestore(app);
+const $ = id => document.getElementById(id);
+function safe(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");}
+window.showSection=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
 body{
   background:#f4f7fb;
   color:#222;
