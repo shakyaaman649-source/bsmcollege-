@@ -1586,6 +1586,24 @@ window.printMarksheet=function(){
 
 };
 
+</script><script>
+// Button Fix - bina Firebase ke bhi kaam karega
+function openLogin(){
+  document.getElementById('publicSite').style.display='none';
+  var lp = document.getElementById('loginPage');
+  lp.style.display='block';
+  lp.classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function closeLogin(){
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('publicSite').style.display='block';
+  document.getElementById('publicSite').classList.remove('hidden');
+}
+function showSection(id){
+  var el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:"smooth"});
+}
 </script>
 
 </body>
