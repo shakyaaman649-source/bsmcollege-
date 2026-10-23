@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shakyaaman649-source.github.io/bsmcollege-/sitemap.xml
