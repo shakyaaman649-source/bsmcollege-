@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>B.S.M. Public School</title>
+<title>B.S.M. Public School - Gangi Nagla</title>
+<meta name="description" content="B.S.M. Public School, Gangi Nagla, Qadarchowk, Budaun - Admission, Fees, Result Management System">
+<!-- AdSense ka code yahan lagega - apna ca-pub code se replace karein -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
 :root{--blue:#174a8b;--sky:#eaf4ff;--purple:#65439a}
 *{box-sizing:border-box}
@@ -12,7 +14,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#18263d}
 header{background:linear-gradient(120deg,#12305a,#2563a6,#65439a);color:white;text-align:center;padding:22px 12px}
 header h1{margin:0;font-size:clamp(24px,5vw,36px)}
 .school{width:100%;max-height:350px;object-fit:cover;display:block;border-bottom:5px solid #f3bd50}
-nav{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:12px;background:white}
+nav{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:12px;background:white;position:sticky;top:0;z-index:10}
 button{background:var(--blue);color:white;border:0;padding:11px 14px;border-radius:8px;margin:3px;font-weight:bold;cursor:pointer}
 button.purple{background:var(--purple)}
 button.light{background:#e5efff;color:#174a8b}
@@ -25,19 +27,15 @@ label{display:block;font-weight:bold;margin:9px 0 5px}
 input,select,textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
 .stat{padding:15px;border-radius:10px;background:#eaf4ff}
-.stat:nth-child(2){background:#f0eaff}
-.stat:nth-child(3){background:#e8f8ef}
-.stat:nth-child(4){background:#fff3df}
-.stat small{display:block;color:#52647c}
-.stat strong{display:block;font-size:23px;margin-top:7px}
-.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:7px}
 .tablewrap{overflow-x:auto}
 table{width:100%;min-width:600px;border-collapse:collapse}
 th,td{border:1px solid #d6dfeb;padding:9px;text-align:left}
 th{background:#eaf4ff}
 .msg{padding:10px;background:#f0eaff;border-radius:8px;overflow-wrap:anywhere}
-footer{text-align:center;padding:20px;background:#12305a;color:white}
+footer{text-align:center;padding:20px;background:#12305a;color:white;line-height:1.8}
+footer a{color:#f3bd50;text-decoration:none;margin:0 8px}
 @media print{nav,button,.no-print{display:none!important}}
+.ad-box{background:#fffbe6;border:1px dashed #f3bd50;padding:10px;border-radius:8px;text-align:center;margin:14px 0}
 </style>
 </head>
 <body>
@@ -46,16 +44,14 @@ footer{text-align:center;padding:20px;background:#12305a;color:white}
 <p>Gangi Nagla, Qadarchowk, Budaun</p>
 <p>School Management System</p>
 </header>
-
-<img class="school" src="school.jpg" alt="B.S.M. Public School"
-onerror="this.style.display='none'">
-
+<img class="school" src="school.jpg" alt="B.S.M. Public School" onerror="this.style.display='none'">
 <nav>
 <button class="light" onclick="page('home')">Home</button>
 <button class="light" onclick="page('admission')">Admission</button>
 <button class="light" onclick="page('login')">Admin Login</button>
+<button class="light" onclick="page('about')">About</button>
+<button class="light" onclick="page('contact')">Contact</button>
 </nav>
-
 <main>
 <section id="home">
 <div class="card">
@@ -63,6 +59,12 @@ onerror="this.style.display='none'">
 <p>Admission, कक्षा-वार विद्यार्थी, फीस और परीक्षा परिणाम का प्रबंधन।</p>
 <button onclick="page('admission')">Admission Form</button>
 <button class="purple" onclick="page('login')">Admin Login</button>
+</div>
+<!-- AD 1 - Home Page -->
+<div class="ad-box">
+<p style="font-size:12px;color:gray;margin:0">Advertisement</p>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </section>
 
@@ -75,7 +77,7 @@ onerror="this.style.display='none'">
 <div><label>पिता का नाम *</label><input name="father" required></div>
 <div><label>जन्मतिथि *</label><input name="dob" type="date" required></div>
 <div><label>कक्षा *</label><select name="className" class="classOptions" required></select></div>
-<div><label>लिंग *</label><select name="gender" required><option value="">चुनें</option><option>लड़का</option><option>लड़की</option><option>अन्य</option></select></div>
+<div><label>लिंग *</label><select name="gender" required><option value="">चुनें</option><option>लड़का</option><option>लड़की</option></select></div>
 <div><label>मोबाइल</label><input name="phone"></div>
 <div><label>गाँव / पता *</label><input name="village" required></div>
 <div><label>कुल फीस (₹)</label><input name="totalFee" type="number" min="0" value="0"></div>
@@ -87,189 +89,61 @@ onerror="this.style.display='none'">
 </section>
 
 <section id="login" class="hidden">
-<div class="card" id="loginCard">
-<h2>Admin Login</h2>
-<form id="loginForm">
-<label>Admin Email</label><input name="email" type="email" required>
-<label>Password</label><input name="password" type="password" required>
-<button type="submit">Login</button>
-</form>
-<p id="loginMsg" class="msg"></p>
-</div>
-
+<div class="card" id="loginCard"><h2>Admin Login</h2>
+<form id="loginForm"><label>Email</label><input name="email" type="email" required><label>Password</label><input name="password" type="password" required><button type="submit">Login</button></form><p id="loginMsg" class="msg"></p></div>
 <div id="dashboard" class="hidden">
-<div class="card">
-<h2>Admin Dashboard</h2>
-<button onclick="loadData()">Refresh Data</button>
-<button class="purple" onclick="logout()">Logout</button>
-<p id="adminMsg" class="msg"></p>
-</div>
-
-<div class="card">
-<h2>कक्षा चुनें</h2>
-<div id="classButtons" class="classes"></div>
-</div>
-
+<div class="card"><h2>Admin Dashboard</h2><button onclick="loadData()">Refresh</button><button class="purple" onclick="logout()">Logout</button><p id="adminMsg" class="msg"></p></div>
+<div class="card"><h2>कक्षा चुनें</h2><div id="classButtons" class="classes" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:7px"></div></div>
 <div id="classPanel" class="hidden">
-<div class="card">
-<h2 id="classTitle">कक्षा Dashboard</h2>
-<div class="stats">
-<div class="stat"><small>कुल विद्यार्थी</small><strong id="total">0</strong></div>
-<div class="stat"><small>लड़कियाँ</small><strong id="girls">0</strong></div>
-<div class="stat"><small>लड़के</small><strong id="boys">0</strong></div>
-<div class="stat"><small>कुल फीस</small><strong id="totalFee">₹0</strong></div>
-<div class="stat"><small>जमा फीस</small><strong id="paidFee">₹0</strong></div>
-<div class="stat"><small>बाकी फीस</small><strong id="dueFee">₹0</strong></div>
-</div>
-<p>
-<button onclick="section('studentArea')">विद्यार्थी सूची</button>
-<button class="purple" onclick="section('feeArea')">Fees Details</button>
-<button onclick="section('resultArea')">Result Making</button>
-</p>
-</div>
-
-<div class="card" id="studentArea">
-<h3>इस कक्षा के विद्यार्थी</h3>
-<input id="search" placeholder="नाम या गाँव खोजें" oninput="renderStudents()">
-<div id="studentTable" class="tablewrap"></div>
-</div>
-
-<div class="card hidden" id="feeArea">
-<h3>इस कक्षा की फीस</h3>
-<form id="feeForm">
-<label>विद्यार्थी</label><select id="feeStudent" name="studentId" required></select>
-<label>फीस प्रकार</label><select name="type"><option>Monthly Fee</option><option>Admission Fee</option><option>Exam Fee</option></select>
-<label>राशि (₹)</label><input name="amount" type="number" min="1" required>
-<label>दिनांक</label><input name="date" type="date" required>
-<button type="submit">फीस सेव करें</button>
-</form>
-<div id="feeTable" class="tablewrap"></div>
-</div>
-
-<div class="card hidden" id="resultArea">
-<h3>इस कक्षा का Result Making</h3>
-<form id="resultForm">
-<label>विद्यार्थी</label><select id="resultStudent" name="studentId" required></select>
-<label>परीक्षा</label><select name="exam"><option>वार्षिक परीक्षा</option><option>अर्धवार्षिक परीक्षा</option></select>
-<label>सत्र</label><input name="session" value="2026-27" required>
-<label>प्रत्येक विषय का पूर्णांक</label><input name="max" type="number" value="100" min="1" required>
-<div class="grid">
-<div><label>हिंदी</label><input name="hindi" type="number" min="0" value="0" required></div>
-<div><label>अंग्रेजी</label><input name="english" type="number" min="0" value="0" required></div>
-<div><label>गणित</label><input name="math" type="number" min="0" value="0" required></div>
-<div><label>विज्ञान</label><input name="science" type="number" min="0" value="0" required></div>
-<div><label>सामाजिक विज्ञान</label><input name="social" type="number" min="0" value="0" required></div>
-</div>
-<button type="submit">Result सेव करें</button>
-</form>
-<div id="resultTable" class="tablewrap"></div>
-<div id="marksheet"></div>
+<div class="card"><h2 id="classTitle">Dashboard</h2><div class="stats"><div class="stat"><small>कुल विद्यार्थी</small><strong id="total">0</strong></div><div class="stat"><small>लड़कियाँ</small><strong id="girls">0</strong></div><div class="stat"><small>लड़के</small><strong id="boys">0</strong></div><div class="stat"><small>कुल फीस</small><strong id="totalFee">₹0</strong></div><div class="stat"><small>जमा फीस</small><strong id="paidFee">₹0</strong></div><div class="stat"><small>बाकी</small><strong id="dueFee">₹0</strong></div></div>
+<p><button onclick="section('studentArea')">विद्यार्थी सूची</button><button class="purple" onclick="section('feeArea')">Fees</button><button onclick="section('resultArea')">Result</button></p></div>
+<div class="card" id="studentArea"><h3>विद्यार्थी सूची</h3><input id="search" placeholder="नाम खोजें" oninput="renderStudents()"><div id="studentTable" class="tablewrap"></div></div>
+<div class="card hidden" id="feeArea"><h3>फीस</h3><form id="feeForm"><label>विद्यार्थी</label><select id="feeStudent" name="studentId" required></select><label>फीस प्रकार</label><select name="type"><option>Monthly Fee</option><option>Admission Fee</option><option>Exam Fee</option></select><label>राशि</label><input name="amount" type="number" required><label>दिनांक</label><input name="date" type="date" required><button type="submit">सेव करें</button></form><div id="feeTable" class="tablewrap"></div></div>
+<div class="card hidden" id="resultArea"><h3>Result Making</h3><form id="resultForm"><label>विद्यार्थी</label><select id="resultStudent" name="studentId" required></select><label>परीक्षा</label><select name="exam"><option>वार्षिक परीक्षा</option><option>अर्धवार्षिक परीक्षा</option></select><label>सत्र</label><input name="session" value="2026-27" required><label>पूर्णांक</label><input name="max" type="number" value="100" required><div class="grid"><div><label>हिंदी</label><input name="hindi" type="number" value="0" required></div><div><label>अंग्रेजी</label><input name="english" type="number" value="0" required></div><div><label>गणित</label><input name="math" type="number" value="0" required></div><div><label>विज्ञान</label><input name="science" type="number" value="0" required></div><div><label>सामाजिक</label><input name="social" type="number" value="0" required></div></div><button type="submit">Result सेव करें</button></form><div id="resultTable" class="tablewrap"></div><div id="marksheet"></div></div>
 </div>
 </div>
 </section>
-</main>
-<footer>B.S.M. Public School · Gangi Nagla, Qadarchowk, Budaun</footer>
 
+<!-- NEW PAGES FOR ADSENSE -->
+<section id="about" class="hidden"><div class="card"><h2>About Us - B.S.M. Public School</h2><p>B.S.M. Public School, Gangi Nagla, Qadarchowk, Budaun (U.P.) एक प्रतिष्ठित विद्यालय है जो ग्रामीण क्षेत्र के बच्चों को गुणवत्तापूर्ण शिक्षा प्रदान करता है। हमारा उद्देश्य Class 1 से 12 तक के विद्यार्थियों का सर्वांगीण विकास करना है।</p><p>हमारे विद्यालय में अनुभवी शिक्षक, आधुनिक सुविधाएं और अनुशासित वातावरण है।</p></div></section>
+<section id="contact" class="hidden"><div class="card"><h2>Contact Us</h2><p><b>पता:</b> B.S.M. Public School, Gangi Nagla, Qadarchowk, Budaun, U.P. - 243601</p><p><b>मोबाइल:</b> +91-XXXXXXXXXX</p><p><b>Email:</b> bsmpublicschool@gmail.com</p><form><label>आपका नाम</label><input><label>संदेश</label><textarea rows="4"></textarea><button>भेजें</button></form></div></section>
+<section id="privacy" class="hidden"><div class="card"><h2>Privacy Policy</h2><p>हम आपकी निजी जानकारी (नाम, मोबाइल, फीस) को सुरक्षित रखते हैं। यह जानकारी केवल स्कूल प्रबंधन के लिए उपयोग की जाती है। हम आपकी जानकारी किसी तीसरी पार्टी के साथ शेयर नहीं करते। इस वेबसाइट पर Google AdSense के विज्ञापन दिखाए जाते हैं जो कुकीज़ का उपयोग कर सकते हैं।</p></div></section>
+<section id="terms" class="hidden"><div class="card"><h2>Terms & Conditions</h2><p>इस वेबसाइट पर दी गई सभी जानकारी स्कूल प्रबंधन द्वारा दी गई है। Admission और Fees से संबंधित नियम स्कूल प्रबंधन के अधीन हैं। वेबसाइट के गलत उपयोग पर कार्रवाई की जा सकती है।</p></div></section>
+
+<!-- AD 2 - Footer se pehle -->
+<div class="ad-box"><p style="font-size:12px;color:gray;margin:0">Advertisement</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+</main>
+<footer>
+B.S.M. inter College · Gangi Nagla, Qadarchowk, Budaun<br>
+<a onclick="page('about')">About</a> | <a onclick="page('contact')">Contact</a> | <a onclick="page('privacy')">Privacy Policy</a> | <a onclick="page('terms')">Terms</a><br>
+© 2026 All Rights Reserved
+</footer>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import{getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import{getFirestore,collection,addDoc,getDocs,doc,deleteDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-/* Firebase Console > Project Settings > Your Apps से config जाँचें */
-const config={
-apiKey:"AIzaSyD_92y08ytyuCjC2h0aBUgR6Z3qDQVrBaA",
-authDomain:"bsm-college.firebaseapp.com",
-projectId:"bsm-college",
-storageBucket:"bsm-college.firebasestorage.app",
-messagingSenderId:"851384629756",
-appId:"1:851384629756:web:8faeb808c30d88b9b19a79"
-};
+import{getFirestore,collection,addDoc,getDocs,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const config={apiKey:"AIzaSyD_92y08ytyuCjC2h0aBUgR6Z3qDQVrBaA",authDomain:"bsm-college.firebaseapp.com",projectId:"bsm-college",storageBucket:"bsm-college.firebasestorage.app",messagingSenderId:"851384629756",appId:"1:851384629756:web:8faeb808c30d88b9b19a79"};
 const app=initializeApp(config),auth=getAuth(app),db=getFirestore(app);
 const $=id=>document.getElementById(id);
 const classes=Array.from({length:12},(_,i)=>"Class "+(i+1));
 let user=null,students=[],fees=[],results=[],chosen="";
 const money=n=>"₹"+Number(n||0).toLocaleString("en-IN");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-window.page=id=>{["home","admission","login"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)};
+window.page=id=>{["home","admission","login","about","contact","privacy","terms"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)};
 window.section=id=>["studentArea","feeArea","resultArea"].forEach(x=>$(x).classList.toggle("hidden",x!==id));
-
 document.querySelectorAll(".classOptions").forEach(el=>el.innerHTML='<option value="">कक्षा चुनें</option>'+classes.map(c=>`<option>${c}</option>`).join(""));
 $("classButtons").innerHTML=classes.map(c=>`<button class="light" onclick="choose('${c}')">${c}</button>`).join("");
-
-onAuthStateChanged(auth,u=>{
-user=u;$("dashboard").classList.toggle("hidden",!u);$("loginCard").classList.toggle("hidden",!!u);
-if(u)loadData();
-});
-
-$("loginForm").onsubmit=async e=>{
-e.preventDefault();let f=new FormData(e.target);
-try{await signInWithEmailAndPassword(auth,f.get("email").trim(),f.get("password"));$("loginMsg").textContent="Login सफल";}
-catch(err){$("loginMsg").textContent="Login Error: "+err.message}
-};
+onAuthStateChanged(auth,u=>{user=u;$("dashboard").classList.toggle("hidden",!u);$("loginCard").classList.toggle("hidden",!!u);if(u)loadData();});
+$("loginForm").onsubmit=async e=>{e.preventDefault();let f=new FormData(e.target);try{await signInWithEmailAndPassword(auth,f.get("email").trim(),f.get("password"));$("loginMsg").textContent="Login सफल";}catch(err){$("loginMsg").textContent="Error: "+err.message}};
 window.logout=()=>signOut(auth);
-
-window.loadData=async()=>{
-if(!user)return;
-try{
-let a=await getDocs(collection(db,"students")),b=await getDocs(collection(db,"fees")),c=await getDocs(collection(db,"results"));
-students=a.docs.map(d=>({id:d.id,...d.data()}));fees=b.docs.map(d=>({id:d.id,...d.data()}));results=c.docs.map(d=>({id:d.id,...d.data()}));
-$("adminMsg").textContent="डेटा लोड: "+students.length+" विद्यार्थी";
-if(chosen)window.choose(chosen);
-}catch(e){$("adminMsg").textContent="Firestore Error: "+e.message}
-};
-
-window.choose=c=>{
-chosen=c;$("classPanel").classList.remove("hidden");$("classTitle").textContent=c+" Dashboard";
-const ss=students.filter(s=>s.className===c),ids=new Set(ss.map(s=>s.id));
-const ff=fees.filter(f=>ids.has(f.studentId)||f.className===c);
-let total=ss.reduce((n,s)=>n+Number(s.totalFee||0),0),paid=ff.reduce((n,f)=>n+Number(f.amount||0),0);
-$("total").textContent=ss.length;
-$("girls").textContent=ss.filter(s=>s.gender==="लड़की").length;
-$("boys").textContent=ss.filter(s=>s.gender==="लड़का").length;
-$("totalFee").textContent=money(total);$("paidFee").textContent=money(paid);$("dueFee").textContent=money(Math.max(0,total-paid));
-for(let id of ["feeStudent","resultStudent"])$(id).innerHTML='<option value="">विद्यार्थी चुनें</option>'+ss.map(s=>`<option value="${s.id}">${esc(s.name)} (${esc(s.roll||"")})</option>`).join("");
-renderStudents();renderFees();renderResults();
-};
-window.renderStudents=()=>{
-let q=$("search").value.toLowerCase(),arr=students.filter(s=>s.className===chosen&&[s.name,s.father,s.village,s.roll].some(v=>String(v||"").toLowerCase().includes(q)));
-$("studentTable").innerHTML=arr.length?`<table><tr><th>Roll</th><th>नाम</th><th>पिता</th><th>गाँव</th><th>लिंग</th><th>कुल फीस</th></tr>${arr.map(s=>`<tr><td>${esc(s.roll)}</td><td>${esc(s.name)}</td><td>${esc(s.father)}</td><td>${esc(s.village)}</td><td>${esc(s.gender||"")}</td><td>${money(s.totalFee)}</td></tr>`).join("")}</table>`:"इस कक्षा में विद्यार्थी नहीं हैं।";
-};
-$("admissionForm").onsubmit=async e=>{
-e.preventDefault();if(!user){$("admissionMsg").textContent="पहले Admin Login करें।";return}
-let f=Object.fromEntries(new FormData(e.target));
-try{
-let s={...f,totalFee:Number(f.totalFee||0),roll:"BSM"+Date.now(),createdAt:serverTimestamp()};
-await addDoc(collection(db,"students"),s);$("admissionMsg").textContent="विद्यार्थी सेव हुआ। Roll: "+s.roll;e.target.reset();await loadData();
-}catch(err){$("admissionMsg").textContent=err.message}
-};
-$("feeForm").onsubmit=async e=>{
-e.preventDefault();let f=Object.fromEntries(new FormData(e.target)),s=students.find(s=>s.id===f.studentId);
-if(!user||!s||s.className!==chosen)return;
-try{await addDoc(collection(db,"fees"),{...f,amount:Number(f.amount),className:chosen,name:s.name,createdAt:serverTimestamp()});await loadData();}
-catch(err){$("adminMsg").textContent=err.message}
-};
-function renderFees(){
-let ids=new Set(students.filter(s=>s.className===chosen).map(s=>s.id)),arr=fees.filter(f=>ids.has(f.studentId)||f.className===chosen);
-$("feeTable").innerHTML=arr.length?`<table><tr><th>दिनांक</th><th>नाम</th><th>प्रकार</th><th>राशि</th></tr>${arr.map(f=>`<tr><td>${esc(f.date)}</td><td>${esc(f.name||"")}</td><td>${esc(f.type)}</td><td>${money(f.amount)}</td></tr>`).join("")}</table>`:"फीस रिकॉर्ड नहीं है।";
-}
-$("resultForm").onsubmit=async e=>{
-e.preventDefault();let f=Object.fromEntries(new FormData(e.target)),s=students.find(s=>s.id===f.studentId);
-if(!user||!s||s.className!==chosen)return;
-let max=Number(f.max),marks=[["हिंदी","hindi"],["अंग्रेजी","english"],["गणित","math"],["विज्ञान","science"],["सामाजिक विज्ञान","social"]].map(([subject,k])=>({subject,obtained:Number(f[k]),max}));
-if(marks.some(m=>m.obtained<0||m.obtained>max)){alert("अंक पूर्णांक से अधिक नहीं हो सकते");return}
-let total=marks.reduce((n,m)=>n+m.obtained,0),outOf=max*marks.length;
-let r={studentId:s.id,name:s.name,father:s.father,roll:s.roll,className:chosen,exam:f.exam,session:f.session,marks,total,outOf,percentage:total/outOf*100,createdAt:serverTimestamp()};
-try{await addDoc(collection(db,"results"),r);await loadData();$("marksheet").innerHTML=makeMarksheet(r);}
-catch(err){$("adminMsg").textContent=err.message}
-};
-function renderResults(){
-let arr=results.filter(r=>r.className===chosen);
-$("resultTable").innerHTML=arr.length?`<table><tr><th>विद्यार्थी</th><th>परीक्षा</th><th>प्रतिशत</th><th>Marksheet</th></tr>${arr.map((r,i)=>`<tr><td>${esc(r.name)}</td><td>${esc(r.exam)}</td><td>${Number(r.percentage).toFixed(2)}%</td><td><button onclick="openMark('${r.id}')">देखें</button></td></tr>`).join("")}</table>`:"इस कक्षा का रिजल्ट नहीं है।";
-}
-function makeMarksheet(r){
-return `<div class="card"><h2 style="text-align:center">B.S.M. Public School</h2><p style="text-align:center">Gangi Nagla, Qadarchowk, Budaun</p><h3 style="text-align:center">MARKSHEET</h3><p>नाम: ${esc(r.name)} | Roll: ${esc(r.roll||"")}</p><p>कक्षा: ${esc(r.className)} | परीक्षा: ${esc(r.exam)}</p><table><tr><th>विषय</th><th>प्राप्तांक</th><th>पूर्णांक</th></tr>${r.marks.map(m=>`<tr><td>${esc(m.subject)}</td><td>${m.obtained}</td><td>${m.max}</td></tr>`).join("")}<tr><th>कुल</th><th>${r.total}</th><th>${r.outOf}</th></tr></table><p>प्रतिशत: ${Number(r.percentage).toFixed(2)}%</p><button onclick="window.print()">Print Marksheet</button></div>`;
-}
-window.openMark=id=>{let r=results.find(x=>x.id===id);if(r)$("marksheet").innerHTML=makeMarksheet(r)};
+window.loadData=async()=>{if(!user)return;try{let a=await getDocs(collection(db,"students")),b=await getDocs(collection(db,"fees")),c=await getDocs(collection(db,"results"));students=a.docs.map(d=>({id:d.id,...d.data()}));fees=b.docs.map(d=>({id:d.id,...d.data()}));results=c.docs.map(d=>({id:d.id,...d.data()}));$("adminMsg").textContent="डेटा: "+students.length+" विद्यार्थी";if(chosen)window.choose(chosen);}catch(e){$("adminMsg").textContent=e.message}};
+window.choose=c=>{chosen=c;$("classPanel").classList.remove("hidden");$("classTitle").textContent=c+" Dashboard";const ss=students.filter(s=>s.className===c),ids=new Set(ss.map(s=>s.id));const ff=fees.filter(f=>ids.has(f.studentId)||f.className===c);let total=ss.reduce((n,s)=>n+Number(s.totalFee||0),0),paid=ff.reduce((n,f)=>n+Number(f.amount||0),0);$("total").textContent=ss.length;$("girls").textContent=ss.filter(s=>s.gender==="लड़की").length;$("boys").textContent=ss.filter(s=>s.gender==="लड़का").length;$("totalFee").textContent=money(total);$("paidFee").textContent=money(paid);$("dueFee").textContent=money(Math.max(0,total-paid));for(let id of["feeStudent","resultStudent"])$(id).innerHTML='<option value="">चुनें</option>'+ss.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join("");renderStudents();renderFees();renderResults();};
+window.renderStudents=()=>{let q=$("search").value.toLowerCase(),arr=students.filter(s=>s.className===chosen&&[s.name,s.father,s.village].some(v=>String(v||"").toLowerCase().includes(q)));$("studentTable").innerHTML=arr.length?`<table><tr><th>नाम</th><th>पिता</th><th>गाँव</th><th>फीस</th></tr>${arr.map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.father)}</td><td>${esc(s.village)}</td><td>${money(s.totalFee)}</td></tr>`).join("")}</table>`:"कोई विद्यार्थी नहीं";};
+$("admissionForm").onsubmit=async e=>{e.preventDefault();if(!user){$("admissionMsg").textContent="पहले Login करें";return}let f=Object.fromEntries(new FormData(e.target));try{let s={...f,totalFee:Number(f.totalFee||0),roll:"BSM"+Date.now(),createdAt:serverTimestamp()};await addDoc(collection(db,"students"),s);$("admissionMsg").textContent="सेव हुआ Roll: "+s.roll;e.target.reset();await loadData();}catch(err){$("admissionMsg").textContent=err.message}};
+$("feeForm").onsubmit=async e=>{e.preventDefault();let f=Object.fromEntries(new FormData(e.target)),s=students.find(s=>s.id===f.studentId);if(!user||!s)return;try{await addDoc(collection(db,"fees"),{...f,amount:Number(f.amount),className:chosen,name:s.name,createdAt:serverTimestamp()});await loadData();}catch(err){$("adminMsg").textContent=err.message}};
+function renderFees(){let ids=new Set(students.filter(s=>s.className===chosen).map(s=>s.id)),arr=fees.filter(f=>ids.has(f.studentId));$("feeTable").innerHTML=arr.length?`<table><tr><th>दिनांक</th><th>नाम</th><th>राशि</th></tr>${arr.map(f=>`<tr><td>${esc(f.date)}</td><td>${esc(f.name)}</td><td>${money(f.amount)}</td></tr>`).join("")}</table>`:"कोई रिकॉर्ड नहीं";}
+$("resultForm").onsubmit=async e=>{e.preventDefault();let f=Object.fromEntries(new FormData(e.target)),s=students.find(s=>s.id===f.studentId);if(!user||!s)return;let max=Number(f.max),marks=[["हिंदी","hindi"],["अंग्रेजी","english"],["गणित","math"],["विज्ञान","science"],["सामाजिक","social"]].map(([sub,k])=>({subject:sub,obtained:Number(f[k]),max}));let total=marks.reduce((n,m)=>n+m.obtained,0),outOf=max*marks.length;let r={studentId:s.id,name:s.name,father:s.father,roll:s.roll,className:chosen,exam:f.exam,session:f.session,marks,total,outOf,percentage:total/outOf*100,createdAt:serverTimestamp()};try{await addDoc(collection(db,"results"),r);await loadData();$("marksheet").innerHTML=`<div class="card"><h3>Marksheet - ${esc(r.name)}</h3><p>कुल: ${r.total}/${r.outOf} - ${r.percentage.toFixed(2)}%</p></div>`;}catch(err){$("adminMsg").textContent=err.message}};
+function renderResults(){let arr=results.filter(r=>r.className===chosen);$("resultTable").innerHTML=arr.length?`<table><tr><th>नाम</th><th>परीक्षा</th><th>%</th></tr>${arr.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.exam)}</td><td>${Number(r.percentage).toFixed(2)}%</td></tr>`).join("")}</table>`:"कोई रिजल्ट नहीं";}
 $("feeForm").elements.date.value=new Date().toISOString().slice(0,10);
 </script>
 </body>
